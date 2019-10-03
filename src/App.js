@@ -9,6 +9,8 @@ import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import Create from './components/create';
+import Read from './components/read';
 
 class App extends React.Component {
   render() {
@@ -17,17 +19,18 @@ class App extends React.Component {
         <div className="App">
 
           <Navbar bg="primary" variant="dark">
+            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#read">Read</Nav.Link>
-              <Nav.Link href="#create">Create</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/read">Read</Nav.Link>
+              <Nav.Link href="/create">Create</Nav.Link>
             </Nav>
           </Navbar>
 
           <Switch>
             <Route exact path="/" component={Content} />
-            <Route path="/read" component={Header} />
-            <Route path="/create" component={Footer} />
+            <Route path="/read" component={Read} />
+            <Route path="/create" component={Create} />
           </Switch>
           {/* <Header></Header>
         <Content></Content>
